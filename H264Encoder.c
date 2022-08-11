@@ -113,8 +113,8 @@ int video_main(int socketId) {
 		// Frames get written after dequeuing the buffer
 
 		printf("Frame %d size of %d\n", cnt++,bufferinfo.bytesused );
-		send(socketId, buffer, bufferinfo.bytesused, 0);
-		//fwrite(buffer,bufferinfo.bytesused,1,write_ptr);
+		send(socketId, buffer, bufferinfo.bytesused, 0); //send to client directly
+		//fwrite(buffer,bufferinfo.bytesused,1,write_ptr); //write into log
     }
 
 /******************************** end looping here **********************/
